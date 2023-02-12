@@ -6,35 +6,35 @@ const message:string = 'This is a simple message'
 const messages:string[] = [ message ]
 
 interface messageInterface {
-	message: string;
-	to: string;
-	date: Date;
-	set?: (a: string) => void,
-	get: () => string,
+  message: string;
+  to: string;
+  date: Date;
+  set?: (a: string) => void,
+  get: () => string,
 }
 
 const compleMessage:messageInterface = {
-	message: 'This is a complete message',
-	to: 'Elon Musk',
-	date: new Date(),
-	get () {
-		return `\tto: ${this.to}\n\tmessage: ${this.message}`
-	}
+  message: 'This is a complete message',
+  to: 'Elon Musk',
+  date: new Date(),
+  get () {
+    return `\tto: ${this.to}\n\tmessage: ${this.message}`
+  }
 }
 
 function createMessage (message: string, to: string): messageInterface {
 
-	return {
-		to,
-		message,
-		date: new Date(),
-		get () {
-			return `\tto: ${this.to}\n\tmessage: ${this.message}`
-		},
-		set (newMessage: string) {
-			this.message = newMessage
-		}
-	}
+  return {
+    to,
+    message,
+    date: new Date(),
+    get () {
+      return `\tto: ${this.to}\n\tmessage: ${this.message}`
+    },
+    set (newMessage: string) {
+      this.message = newMessage
+    }
+  }
 }
 ```
 
@@ -49,9 +49,9 @@ const civilStatus:CivilStatus = 'Married' // 'Single
 
 // Generics
 interface PersonKeyHandler<Type> {
-	set: (a: Type) => void;
-	get: () => Type;
-	value: Type;
+  set: (a: Type) => void;
+  get: () => Type;
+  value: Type;
 }
 
 declare const civilStatusHandler:PersonKeyHandler<CivilStatus>
@@ -66,7 +66,7 @@ const civilStatuses:Array<CivilStatus> = []
 #### Enums
 ```typescript
 enum Responses {
-	error = 'Has been an error, try later',
-	success = 'Action done correctly'
+  error = 'Has been an error, try later',
+  success = 'Action done correctly'
 }
 ```

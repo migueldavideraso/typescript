@@ -18,7 +18,7 @@ const compleMessage:messageInterface = {
   to: 'Elon Musk',
   date: new Date(),
   get () {
-    return `\tto: ${this.to}\n\tmessage: ${this.message}`
+    return `\tto: ${this.to}\n\tmessage: ${this.message}\n\tdate: ${this.date.toLocaleString()}`
   }
 }
 
@@ -29,7 +29,7 @@ function createMessage (message: string, to: string): messageInterface {
     message,
     date: new Date(),
     get () {
-      return `\tto: ${this.to}\n\tmessage: ${this.message}`
+	    return `\tto: ${this.to}\n\tmessage: ${this.message}\n\tdate: ${this.date.toLocaleString()}`
     },
     set (newMessage: string) {
       this.message = newMessage
